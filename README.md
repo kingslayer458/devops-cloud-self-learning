@@ -6,5 +6,7 @@ cheat code for all cloud topics
 odin
 = https://www.theodinproject.com/paths/full-stack-javascript
 
+javascript
+= https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/
 
 
