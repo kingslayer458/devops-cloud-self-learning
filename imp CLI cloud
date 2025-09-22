@@ -1,0 +1,51 @@
+ssh -i ~/yourkey.pem ubuntu@yourip
+
+
+# Docker & Bot Management Commands
+# Install Docker (Ubuntu)
+sudo apt-get update
+sudo apt-get install -y docker.io
+sudo systemctl start docker
+sudo usermod -aG docker $USER
+# Log out and log in again or run: newgrp docker
+
+docker --version
+docker run hello-world
+
+# Build Docker image for the bot
+docker build -t your-bot .
+
+# Run the bot container (with .env file)
+docker run -d --env-file .env --name your-bot -p 3000:3000 your-bot
+
+# View logs
+docker logs -f your-bot
+
+# Stop/start/restart the bot
+docker stop your-bot
+docker start your-bot
+docker restart your-bot
+
+# Remove the container (if needed)
+docker rm your-bot
+
+# Remove the image (if needed)
+docker rmi your-bot
+
+# Check running containers
+docker ps -a
+
+
+
+# (Legacy) Forever commands for reference
+forever start --uid "your-bot" --env-file .env instagram-steam-fetcher.js
+forever restart your-bot
+forever stop your-bot
+forever stopall
+forever list
+forever cleanlogs
+tail -f /home/ubuntu/.forever/instagram-bot.log
+ cat /home/ubuntu/.forever/instagram-bot.log
+tail in real time = tail -f /home/ubuntu/.forever/instagram-bot.log
+
+
