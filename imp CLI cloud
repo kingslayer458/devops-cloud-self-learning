@@ -38,7 +38,7 @@ docker ps -a
 
 
 # (Legacy) Forever commands for reference
-forever start --uid "your-bot" --env-file .env instagram-steam-fetcher.js
+forever start --uid "your-bot" --env-file .env your.js
 forever restart your-bot
 forever stop your-bot
 forever stopall
